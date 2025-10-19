@@ -1,0 +1,183 @@
+
+/* Genel */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 5rem 1rem 2rem;
+}
+header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+header p { font-size: 1.1rem; color: #ccc; }
+header nav a { color: #aaa; margin: 0 10px; text-decoration: none; transition: 0.3s; }
+header nav a:hover { color: #6a93ff; }
+
+/* Bölümler */
+.section {
+  width: 80%;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* Hakkımda Paragraf ve Liste kismi */
+.section p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.section ul {
+  list-style: inside square;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.section ul li {
+  margin-bottom: 0.6rem;
+  color: #aaa;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.section ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6a93ff;
+  font-weight: bold;
+}
+
+/* Yetenek Kartları tektek one cikmasini istedim */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.skill-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.4s;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: #2575fc;
+  box-shadow: 0 0 25px rgba(37, 117, 252, 0.5);
+}
+.skill-card i {
+  font-size: 2.5rem;
+  color: #6a93ff;
+  margin-bottom: 0.5rem;
+}
+.skill-card h3 {
+  margin-bottom: 0.6rem;
+}
+.skill-bar {
+  height: 10px;
+  background: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2575fc;
+  transition: width 1.5s ease;
+}
+.percent {
+  display: block;
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+/* Projeler daha soft kalmasini istedim */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.project-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.4s;
+}
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+.project-card h4 { margin-bottom: 0.5rem; }
+.project-card p { color: #ccc; margin-bottom: 0.5rem; }
+.project-card a.btn {
+  padding: 5px 15px;
+  background: #2575fc;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.project-card a.btn:hover { background: #6a11cb; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(25, 24, 24, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #1e1e2f;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(106,17,203,0.4);
+  animation: fadeIn 0.4s ease;
+}
+.modal-content h3 { color: #6a93ff; margin-bottom: 1rem; }
+.close { position: absolute; top: 10px; right: 20px; cursor: pointer; font-size: 1.5rem; }
+@keyframes fadeIn { from { opacity:0; transform:scale(0.95); } to { opacity:1; transform:scale(1); } }
+
+/* Footer */
+footer { text-align:center; margin-top:2rem; padding:1rem; color:#a4bbcd; font-size:0.9rem; }
+
+/* Particles Canvas */
+#particles {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:-1;
+  background: radial-gradient(circle at center, #0f2027, #203a43, #2c5364);
+}
